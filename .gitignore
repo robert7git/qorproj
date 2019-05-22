@@ -48,6 +48,8 @@ public/webpack/
 *.css.map
 npm-debug.log
 
+# go -----------------
+debug
 config/*.yml
 public/microsites/*
 # vendor/*
