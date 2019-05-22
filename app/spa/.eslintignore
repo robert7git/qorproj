@@ -1,0 +1,13 @@
+.next/
+node_modules
+dist/
+.gitignore
+webpack
+
+# test
+# .babelrc
+# .eslintrc
+# package.json
+# postcss.config.json
+# src/assets/
+

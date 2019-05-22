@@ -1,0 +1,24 @@
+# FIXME: 换行位置问题， 非常难看!! 一个对象 突然就换行了
+
+printWidth: 120 # 换行字符串阈值
+useTabs: false
+tabWidth: 2
+semi: false # 句末加分号
+singleQuote: true # 用单引号
+trailingComma: 'none' # 最后一个对象元素加逗号  none / es5 / all
+bracketSpacing: true # 对象，数组加空格
+jsxBracketSameLine: false # jsx > 是否另起一行
+arrowParens: 'avoid' # (x) => {} 是否要有小括号
+jsxSingleQuote: false # Specify the end of line used by prettier. Learn more here
+
+# disableLanguages: ["vue"]
+# ignorePath: ".prettierignore"
+# requireConfig: false # Require a 'prettierconfig' to format
+# eslintIntegration: false # JavaScript and TypeScript only
+# endOfLine: "auto"
+# htmlWhitespaceSensitivity: "css"  # Specify the global whitespace sensitivity for HTML files. Learn more here
+# requirePragma: true # 是否要注释来决定是否格式化代码
+# 注意: 这会使 prittier 失效
+# proseWrap: 'preserve' # 是否要换行 (Markdown) wrap prose over multiple lines.
+# proseWrap: "never" # 是否要换行
+# parser: "flow", 指定要使用的解析器 babylon / flow

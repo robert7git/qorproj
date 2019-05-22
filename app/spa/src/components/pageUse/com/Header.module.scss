@@ -1,0 +1,73 @@
+@import '@/assets/style/_var.scss';
+@import '@/assets/style/_mixins.scss';
+
+$height: 80px;
+
+.nav ul,
+.slogan {
+  margin: 0;
+}
+
+.Header {
+  background-color: #fff;
+  overflow: hidden;
+  height: $height;
+  line-height: $height;
+  margin-bottom: 8px;
+}
+
+.logo {
+  float: left;
+  height: $height;
+  line-height: $height;
+  padding: 0 16px;
+  margin-right: 8px;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  &:hover {
+    color: #000;
+  }
+}
+
+.slogan {
+  float: left;
+  margin-right: 8px;
+  height: $height;
+  line-height: $height;
+}
+
+.nav {
+  float: left;
+  padding: 0 8px;
+  ul {
+    display: flex;
+  }
+  a {
+    display: inline-block;
+    padding: 0 8px;
+    height: $height;
+    line-height: $height;
+  }
+}
+
+.user {
+  float: right;
+  padding: 0 32px;
+  @include respond-to(xs) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+    border: 1px solid #333;
+
+    span,
+    a {
+      line-height: 1.5;
+    }
+  }
+}

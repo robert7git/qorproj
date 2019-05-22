@@ -1,0 +1,144 @@
+$white: #fff !default;
+$black: #000 !default;
+$red: #d9534f !default;
+$orange: #f0ad4e !default;
+$yellow: #ffd500 !default;
+$green: #5cb85c !default;
+$blue: #36f !default;
+$teal: #0083b8 !default;
+$pink: #ff5b77 !default;
+$purple: #613d7c !default;
+/* 灰色系 */
+
+$dark: #191b1c !default;
+$gray-dark: #292b2c !default;
+$gray: #464a4c !default;
+$gray-light: #898989 !default;
+$gray-lighter: #e9e9e9 !default;
+$gray-lightest: #f7f7f9 !default;
+/* 基本颜色等级类型 */
+
+// $success-color: $green !default;
+$info-color: $teal !default;
+$warning-color: $orange !default;
+$danger-color: $red !default;
+$inverse-color: $gray-dark !default;
+// $font-base-color: #738a94;
+$font-base-color: #15171a;
+$link-decoration: none !default;
+$link-hover-decoration: none !default;
+
+// $primary-color: #162eae;
+// $primary-color: #4711ae;
+// $primary-color: #0776a0;
+// $primary-color: #39c;
+$primary-color: #39c;
+$secondary-color: #39c;
+$success-color: $green !default;
+$carat-color: #f93;
+$price-color: #f50;
+// $carat-color: #ffb800;
+$link-color: $secondary-color !default;
+$link-hover-color: $carat-color !default;
+$link-active-color: $link-hover-color !default;
+$active-color: $carat-color;
+
+$padding-edge: 1rem;
+$header-height: 4.6rem;
+// $header-bg: #f50;
+
+/* btn */
+$btn-default-bg-color: $white !default;
+$btn-primary-bg-color: $primary-color !default;
+$btn-success-bg-color: $success-color !default;
+$btn-info-bg-color: $info-color !default;
+$btn-warning-bg-color: $warning-color !default;
+$btn-danger-bg-color: $danger-color !default;
+$btn-default-text-color: $font-base-color !default;
+$btn-primary-text-color: $white !default;
+$btn-success-text-color: $white !default;
+$btn-info-text-color: $white !default;
+$btn-warning-text-color: $white !default;
+$btn-danger-text-color: $white !default;
+$btn-default-border-color: lighten($gray, 10%) !default;
+$btn-primary-border-color: darken($btn-primary-bg-color, 10%) !default;
+$btn-success-border-color: $btn-success-bg-color !default;
+$btn-info-border-color: $btn-info-bg-color !default;
+$btn-warning-border-color: $btn-warning-bg-color !default;
+$btn-danger-border-color: $btn-danger-bg-color !default;
+$btn-ghost-border-color: $gray-lighter !default;
+$btn-ghost-bg-color: transparent !default;
+
+$input-default-border-color: lighten($gray-light, 40%) !default;
+$input-focus-border-color: $primary-color;
+// $input-focus-border-color: darken($primary-color, 40%) !default;
+
+$screen-xs-max: 575px; // 超小屏幕（手机，小于 320px
+$screen-sm-min: 576px; // 小屏幕（平板，大于等于 768px
+$screen-md-min: 768px; // 中等屏幕（桌面显示器，大于等于 768px
+$screen-lg-min: 992px; // 大屏幕（大桌面显示器，大于等于 992px
+$screen-xl-min: 1200px; // 大屏幕（大桌面显示器，大于等于 1200px
+$screen-xxl-min: 1600px; // 大屏幕（大桌面显示器，大于等于 1600px
+
+$border-radius-normal: 3px;
+$border-normal-color: #fff;
+$border-normal-width: 1px;
+$border-normal-style: solid;
+
+/*
+偶尔也会在媒体查询代码中包含 max-width 从而将 CSS 的影响限制在更小范围的屏幕大小之内。
+@media (max-width: @screen-xs-max) { ... }
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
+@media (min-width: @screen-lg-min) { ... }
+*/
+
+$app-easing: cubic-bezier(0.35, 0.01, 0.77, 0.34);
+$breakpoints: (
+  'xs': (
+    max-width: $screen-xs-max
+  ),
+  'sm': (
+    min-width: $screen-sm-min
+  ),
+  'md': (
+    min-width: $screen-md-min
+  ),
+  'lg': (
+    min-width: $screen-lg-min
+  ),
+  'xl': (
+    min-width: $screen-xl-min
+  ),
+  'xxl': (
+    min-width: $screen-xxl-min
+  ) //'small-portrait':
+  (
+    min-width: 767px,
+    orientation: portrait
+  )
+);
+
+/* ------------------------------------------------------
+* gaps 网格间距单位
+------------------------------------------------------ */
+$EP_1: 0.8rem;
+$EP_2: 1.6rem;
+$EP_3: 2.4rem;
+$EP_4: 3.2rem;
+$EP_5: 4rem;
+$EP_6: 4.8rem;
+$EP_7: 5.6rem;
+$EP_8: 6.4rem;
+$EP_9: 7.2rem;
+$EP_10: 8rem;
+$EP_11: 8.8rem;
+$EP_12: 9.6rem;
+$EP_13: 10.4rem;
+$EP_14: 11.2rem;
+$EP_15: 12rem;
+$EP_16: 12.8rem;
+$EP_17: 13.6rem;
+$EP_18: 14.2rem;
+$EP_19: 15rem;
+$EP_20: 15.8rem;

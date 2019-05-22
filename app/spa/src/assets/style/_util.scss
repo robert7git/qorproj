@@ -1,0 +1,186 @@
+@import './_var.scss';
+@import './_mixins.scss';
+.fix {
+	// &::after{
+	// content:'';
+	padding: 0;
+	display: block;
+	height: 0;
+	// }
+}
+.clear {
+	clear: both;
+	height: 0;
+	line-height: 1;
+	overflow: hidden;
+	margin: 0;
+}
+
+.tc {
+	text-align: center;
+}
+.tr {
+	text-align: right;
+}
+.tl {
+	text-align: left;
+}
+.mt0 {
+	margin-top: 0;
+}
+.mb0 {
+	margin-bottom: 0;
+}
+.m0 {
+	margin: 0;
+}
+.p1 {
+	padding: $EP_1;
+}
+.p3 {
+	padding: $EP_3;
+}
+.p4 {
+	padding: $EP_4;
+}
+.p5 {
+	padding: $EP_5;
+}
+
+.mt1 {
+	margin-top: $EP_1;
+}
+.mt2 {
+	margin-top: $EP_2;
+}
+.mt3 {
+	margin-top: $EP_3;
+}
+.mb1 {
+	margin-bottom: $EP_1;
+}
+.mb2 {
+	margin-bottom: $EP_2;
+}
+.mb3 {
+	margin-bottom: $EP_3;
+}
+.mb4 {
+	margin-bottom: $EP_4;
+}
+.mb10 {
+	margin-bottom: $EP_10;
+}
+.mb20 {
+	margin-bottom: $EP_20;
+}
+.mb5 {
+	margin-bottom: $EP_5;
+}
+.mr05 {
+	margin-right: $EP_1;
+}
+.ml05 {
+	margin-left: $EP_1;
+}
+.mr1 {
+	margin-right: $EP_1;
+}
+.pr1 {
+	padding-right: $EP_1;
+}
+.bgLight {
+	background-color: #cff;
+}
+.box {
+	padding: $EP_1;
+	margin-bottom: $EP_1;
+	border-radius: 3px;
+	img {
+		width: 100%;
+	}
+}
+
+.thumbnail {
+	border-radius: 3px;
+	width: 100%;
+}
+
+.tag {
+	margin-right: $EP_1;
+	// border: 1px solid #333;
+	display: inline-block;
+}
+
+.pan {
+	// @include box-normal();
+	background-color: #fff;
+	border-radius: $border-radius-normal;
+	margin-bottom: $EP_1;
+	padding: $EP_1;
+	font-size: 1.2rem;
+	.pan-tit {
+		font-size: 0.12rem;
+		margin-top: 0;
+		padding: $EP_1 $EP_1;
+	}
+	li {
+		a {
+			display: block;
+			width: 100%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+.active {
+	color: $active-color;
+}
+// .rc-notification{
+//   border: 1px solid #333;
+// }
+
+// .heading {
+// 	// border-bottom:1px solid $headings-color;
+// 	line-height: 1.2;
+// 	.en {
+// 		// border-top: 1px dotted $headings-color;
+// 		// border-top: 1px solid $carat-color;
+// 		color: #333;
+// 		font-weight: 200;
+// 	}
+// }
+.en {
+	font-weight: 200;
+}
+.fs2 {
+	font-size: 2em;
+}
+
+.fs05 {
+	font-size: 0.5em;
+}
+
+.table {
+	// border
+	border-collapse: collapse;
+	td {
+		padding: $EP_2 $EP_2;
+		border: 1px solid #ccc;
+		background-color: #f2f2f2;
+	}
+}
+
+.table-responsive {
+	width: 100%;
+}
+
+.table-fixed {
+	table-layout: fixed;
+}
+
+.relative {
+	position: relative;
+}

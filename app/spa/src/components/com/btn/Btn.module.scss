@@ -1,0 +1,176 @@
+@import '@/assets/style/_var.scss';
+@import '@/assets/style/_mixins.scss';
+
+.btn {
+  @include btn();
+  padding: 0.5em;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------
+* 整行显示按钮
+------------------------------------------------------ */
+.block {
+  display: block;
+  width: 100%;
+}
+
+/* ------------------------------------------------------
+* size
+------------------------------------------------------ */
+.xs {
+  // padding: 2.5em;
+  font-size: 1.2rem;
+}
+.s {
+  font-size: 1.2rem;
+}
+.sm {
+  font-size: 1.4rem;
+}
+.md {
+  font-size: 1.4rem;
+}
+.lg {
+  font-size: 2.2rem;
+}
+.xlg {
+  font-size: 3.3rem;
+}
+
+/* ------------------------------------------------------
+* looks
+------------------------------------------------------ */
+.looks_default {
+  background-color: $btn-default-bg-color;
+  color: $btn-default-text-color;
+  border-color: $btn-default-border-color;
+  color: $btn-default-text-color;
+}
+.looks_link {
+  background-color: transparent;
+  color: $link-color;
+  border-color: transparent;
+}
+.looks_text {
+  background-color: transparent;
+  color: $font-base-color;
+  border-color: transparent;
+  cursor: default;
+}
+.looks_ghost {
+  background-color: $btn-ghost-bg-color;
+  color: $btn-default-text-color;
+  border-color: $btn-default-border-color;
+  &.primary {
+    background-color: $btn-primary-bg-color;
+    color: $btn-primary-text-color;
+    border-color: $btn-primary-border-color;
+    &:hover {
+      color: $btn-primary-text-color;
+    }
+  }
+  &.success {
+    background-color: $btn-success-bg-color;
+    color: $btn-success-text-color;
+    border-color: $btn-success-border-color;
+    &:hover {
+      color: $btn-success-text-color;
+    }
+  }
+  &.info {
+    background-color: $btn-info-bg-color;
+    color: $btn-info-text-color;
+    border-color: $btn-info-border-color;
+    &:hover {
+      color: $btn-info-text-color;
+    }
+  }
+  &.warning {
+    background-color: $btn-warning-bg-color;
+    color: $btn-warning-text-color;
+    border-color: $btn-warning-border-color;
+    &:hover {
+      color: $btn-warning-text-color;
+    }
+  }
+  &.danger {
+    background-color: $btn-danger-bg-color;
+    color: $btn-danger-text-color;
+    border-color: $btn-danger-border-color;
+    &:hover {
+      color: $btn-danger-text-color;
+    }
+  }
+}
+
+/* ------------------------------------------------------
+* level
+------------------------------------------------------ */
+.default {
+  background-color: $btn-default-bg-color;
+  color: $btn-default-text-color;
+  border-color: $btn-default-border-color;
+  color: $btn-default-text-color;
+  &:hover {
+    color: $btn-default-text-color;
+    background-color: darken($btn-default-bg-color, 10%);
+  }
+}
+
+.primary {
+  background-color: $btn-primary-bg-color;
+  color: $btn-primary-text-color;
+  border-color: $btn-primary-border-color;
+  &:hover {
+    color: $btn-primary-text-color;
+  }
+}
+.success {
+  background-color: $btn-success-bg-color;
+  color: $btn-success-text-color;
+  border-color: $btn-success-border-color;
+  &:hover {
+    color: $btn-success-text-color;
+  }
+}
+.info {
+  background-color: $btn-info-bg-color;
+  color: $btn-info-text-color;
+  border-color: $btn-info-border-color;
+  &:hover {
+    color: $btn-info-text-color;
+  }
+}
+.warning {
+  background-color: $btn-warning-bg-color;
+  color: $btn-warning-text-color;
+  border-color: $btn-warning-border-color;
+  &:hover {
+    color: $btn-warning-text-color;
+  }
+}
+.danger {
+  background-color: $btn-danger-bg-color;
+  color: $btn-danger-text-color;
+  border-color: $btn-danger-border-color;
+  &:hover {
+    color: $btn-danger-text-color;
+  }
+}
+
+/* ------------------------------------------------------
+* state
+------------------------------------------------------ */
+.disabled {
+  background-color: #eee;
+  color: #999;
+  border-color: #ccc;
+  cursor: default;
+}
+.link.disabled {
+  background-color: transparent;
+  border: transparent;
+}

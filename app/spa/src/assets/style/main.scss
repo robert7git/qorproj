@@ -1,0 +1,97 @@
+@import './_var.scss';
+@import './_util.scss';
+@import './_mixins.scss';
+@import './_reset.scss';
+@import './_typo.scss';
+@import './_animate.scss';
+@import './_layout.scss';
+@import './_grid.scss';
+@import './font/scss/font-awesome.scss';
+
+html {
+  background-color: #eee;
+}
+body {
+  background-color: #eee;
+}
+
+.bf-container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+//
+// table
+// ------------------------------------------------------
+
+.rc-table-fixed-left,
+.rc-table-fixed-right {
+  overflow: hidden !important;
+}
+.rc-table {
+  color: $font-base-color;
+}
+
+.rc-table table {
+  border-collapse: collapse !important;
+}
+.rc-table .rc-table-thead tr:hover {
+  background-color: transparent;
+}
+
+.rc-table th {
+  background-color: transparent !important;
+  border-bottom: 1px solid #d6d6d6 !important;
+}
+
+.rc-table th {
+  padding: 8px 8px !important;
+  color: $gray-light !important;
+}
+.rc-table td {
+  padding: 8px 8px !important;
+  border-bottom: 1px solid #eee !important;
+}
+
+.rc-table tr:hover,
+.rc-table .rc-table-row-hover {
+  background: #f9f9f9 !important;
+}
+
+
+.rc-table-row-expand-icon,
+.rc-table-expanded-row-expand-icon {
+  font-family: arial;
+  margin-right: 0.2em;
+  height: 15px !important;
+  width: 16px !important;
+  line-height: 15px !important;
+  border-radius: 3px;
+}
+
+//
+// tree
+// ------------------------------------------------------
+.rc-tree li span.rc-tree-title {
+  display: inline-block;
+  line-height: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+.rc-tree li span.rc-tree-iconEle {
+  line-height: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+.rc-tree li .rc-tree-node-content-wrapper {
+  border: 0 !important;
+  border-radius: 3px;
+  padding: 3px 8px 3px 5px !important;
+  height: auto !important;
+  line-height: 16px;
+}
+
+.rc-tree-node-selected {
+  border: 0 !important;
+  background-color: lighten($gray-light, 35%) !important;
+}

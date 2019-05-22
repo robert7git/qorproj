@@ -1,0 +1,28 @@
+@import '@/assets/style/_var.scss';
+@import '@/assets/style/_mixins.scss';
+
+.ShopList {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    padding: 8px;
+    width: 16.6666667%;
+    img {
+      display: block;
+      min-width: 100%;
+    }
+
+    @include respond-to(xs) {
+      width: 50%;
+    }
+    @include respond-to(sm) {
+      width: 25%;
+    }
+    @include respond-to(md) {
+      width: 25%;
+    }
+    @include respond-to(lg) {
+      width: 16.6666667%;
+    }
+  }
+}

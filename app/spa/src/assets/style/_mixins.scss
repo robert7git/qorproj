@@ -1,0 +1,98 @@
+@import '_var.scss';
+
+@mixin ellipse() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // white-space: nowrap;
+  // word-break: normal;
+  // 　　word-break: break-all;
+  // 　　word-break: keep-all;
+  // 　　word-wrap: break-word;
+}
+
+// @mixin form-input() {
+//     @include boxRadius(0);
+//     border: 1px solid $form-input-color;
+//     background-color: #fff;
+//     vertical-align: middle;
+//     /* box-shadow: inset 0 1px 1px 0 rgba(50, 50, 50, 0.1);
+// 	box-shadow: none; */
+// }
+
+@mixin box-normal() {
+  background-color: #fff;
+  border-radius: $border-radius-normal;
+  border: $border-normal-width $border-normal-style $border-normal-color;
+}
+
+@mixin btn() {
+  display: inline-block; // font-size: 1.4rem;
+  border: 1px solid $btn-default-border-color;
+  background-color: $btn-default-bg-color;
+  line-height: 1;
+  font-weight: 200;
+  padding: 5px 10px;
+  @include boxRadius(3px); // @include boxShadow(1px, 2px, 2px, 1px, rgba(0, 0, 0, 0.1));
+}
+
+@mixin fix() {
+  &:after {
+    content: ' ';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@mixin boxShadow($v1: 1px, $v2: 1px, $v3: 2px, $color: rgba(0, 0, 0, 0.2)) {
+  box-shadow: $v1 $v2 $v3 $color;
+}
+
+@mixin boxRadius($v: 3px) {
+  border-radius: $v;
+}
+
+/*
+	封装媒体查询
+	Media query merger
+	Create a single media condition out of a map of queries
+	@param {Map} $queries - Map of media queries
+ */
+
+// @mixin media($queries) {
+//     @if length($queries)==0 {
+//         @content;
+//     }
+//     @else {
+//         $first-key: nth(map-keys($queries), 1);
+//         @media ($first-key: map-get($queries, $first-key)) {
+//             $queries: map-remove($queries, $first-key);
+//             @include media($queries) {
+//                 @content;
+//             }
+//         }
+//     }
+// }
+// @mixin respond-to($media) {
+//   @if $media == handhelds {
+//     @media only screen and (max-width: $break-small) { @content; }
+//   }
+//   @else if $media == medium-screens {
+//     @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+//   }
+//   @else if $media == wide-screens {
+//     @media only screen and (min-width: $break-large) { @content; }
+//   }
+// }
+
+@mixin respond-to($breakpoint) {
+  $media: map-get($breakpoints, $breakpoint);
+  /*  @if not $media {
+		@error "No query could be retrieved from `#{$breakpoint}`. "
+		+ "Please make sure it is defined in `$breakpoints` map.";
+     } */
+  @media #{inspect($media)} {
+    @content;
+  }
+}
