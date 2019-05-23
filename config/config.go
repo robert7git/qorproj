@@ -80,10 +80,6 @@ var (
 )
 
 func init() {
-	fmt.Println("-----------------------------------")
-	// fmt.Println(os.Getenv("GOENV"))
-	// fmt.Println(GOPATH)
-
 	if err := configor.Load(&Config, "config/database.yml", "config/smtp.yml", "config/application.yml"); err != nil {
 		panic(err)
 	}
