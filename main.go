@@ -10,9 +10,10 @@ import (
 	"qorproj/app/account"
 	adminapp "qorproj/app/admin"
 
+	"github.com/qor/admin"
+
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
-	"github.com/qor/admin"
 	"github.com/qor/publish2"
 	"github.com/qor/qor"
 

@@ -56,7 +56,6 @@ require (
 	github.com/qor/publish v0.0.0-20181014061411-abfbacee9e0d // indirect
 	github.com/qor/publish2 v0.0.0-20190307014056-64962b1c0536
 	github.com/qor/qor v0.0.0-20190319081902-186b0237364b
-	github.com/qor/qor-example v0.0.0-20190225031557-75e1973e60a7 // indirect
 	github.com/qor/redirect_back v0.0.0-20170907030740-b4161ed6f848
 	github.com/qor/render v0.0.0-20171201033449-63566e46f01b
 	github.com/qor/responder v0.0.0-20171031032654-b6def473574f
