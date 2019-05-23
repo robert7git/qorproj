@@ -63,10 +63,12 @@ var Config = struct {
 	BaiduAPIKey  string `env:"BaiduAPIKey"`
 }{}
 
-var GOPATH = "/Users/Robert/www/rproj/qorproj"
+var GOPATH, _ = os.Getwd()
+
+// var GOPATH = "/Users/Robert/www/rproj/qorproj"
 var (
 	// gomodPath = strings.Split(os.Getenv("GOMOD"), "go.mod")[0]
-	Root           = GOPATH + "/src/qorproj"
+	Root           = GOPATH
 	Mailer         *mailer.Mailer
 	Render         = render.New()
 	AmazonPay      *amazonpay.AmazonPay
@@ -79,7 +81,8 @@ var (
 
 func init() {
 	fmt.Println("-----------------------------------")
-	fmt.Println(os.Getenv("GOENV"))
+	// fmt.Println(os.Getenv("GOENV"))
+	// fmt.Println(GOPATH)
 
 	if err := configor.Load(&Config, "config/database.yml", "config/smtp.yml", "config/application.yml"); err != nil {
 		panic(err)

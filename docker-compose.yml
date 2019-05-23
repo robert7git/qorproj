@@ -1,0 +1,35 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0.11
+    container_name: mysql # 容器名
+    volumes: # 挂载
+      - '$HOME/code/data/mysql:/var/lib/mysql'
+      # - "$HOME/code/conf/my.cnf:/etc/my.cnf"
+      # - "$HOME/code/init:/docker-entrypoint-initdb.d/"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: qorproj
+    # command: [
+    #   '--character-set-server=utf8',
+    #   '--collation-server=utf8',
+    #   '--default-time-zone=+8:00'
+    # ]
+    # networks: # 网络
+    # mysql: # 见跟 services 平级的 networks,在最下边
+    # ipv4_address: 172.18.0.2 # 设置静态ipv4的地址
+    ports:
+      - '3306:33066'
+  service:
+    links:
+      - 'mysql'
+    volumes:
+      - $HOME/www/rproj/qorproj/src/qorproj:/gocode/src/qorproj
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    tty: true
+    restart: always
+    ports:
+      - '7000:7000'
