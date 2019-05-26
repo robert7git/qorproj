@@ -20,8 +20,11 @@ import (
 	"github.com/theplant/cldr"
 )
 
+// IMPORTANT: 这里是默认模板 中英文选项
 // Default default locale for i18n
 var Default = "en-US"
+
+// var Default = "zh-CN"
 
 // I18n struct that hold all translations
 type I18n struct {
