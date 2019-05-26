@@ -1,8 +1,8 @@
 en-US:
   qor_admin:
     menus:
-      dashboard: '面板'
-      site_management: '站点管理'
+      dashboard: 'Dashbord'
+      site_management: 'Site Management'
     actions:
       advanced_filter: ' 高级过滤'
       bulk_edit: ' 块编辑 '
@@ -46,7 +46,7 @@ en-US:
     layout:
       header:
         actions: ' 操作 '
-      logo: 'Herring'
+      logo: '/images/logo.png'
       skip_to_content: ' 跳至内容 '
     pagination:
       first: ' 首页 '

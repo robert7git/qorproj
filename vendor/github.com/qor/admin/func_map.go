@@ -26,6 +26,7 @@ import (
 )
 
 // FuncMap funcs map for current context
+// NOTE: qor/admin/func_map.go->FuncMap() 这里注册了一堆 模板方法
 func (context *Context) FuncMap() template.FuncMap {
 	funcMap := template.FuncMap{
 		"current_user":         func() qor.CurrentUser { return context.CurrentUser },
@@ -747,13 +748,18 @@ type menu struct {
 	SubMenus []*menu
 }
 
+// IMPORTANT: 左侧菜单调用的 funcmap get_menus
+// NOTE: 生成 aside 菜单
 func (context *Context) getMenus() (menus []*menu) {
 	var (
 		globalMenu        = &menu{}
 		mostMatchedMenu   *menu
 		mostMatchedLength int
 		addMenu           func(*menu, []*Menu)
+		adminMenus        []*Menu
 	)
+
+	adminMenus = context.Admin.GetMenus()
 
 	addMenu = func(parent *menu, menus []*Menu) {
 		for _, m := range menus {
@@ -773,7 +779,7 @@ func (context *Context) getMenus() (menus []*menu) {
 		}
 	}
 
-	addMenu(globalMenu, context.Admin.GetMenus())
+	addMenu(globalMenu, adminMenus)
 
 	if context.Action != "search_center" && mostMatchedMenu != nil {
 		mostMatchedMenu.Active = true
@@ -1097,11 +1103,19 @@ func (context *Context) logoutURL() string {
 	return ""
 }
 
+// IMPORTANT: 这里是 template 中调用的 t
+// NOTE: 这里 根据 values 处理调用了  Admin.T() 所以 可以说 t() 就是 T()
 func (context *Context) t(values ...interface{}) template.HTML {
 	switch len(values) {
 	case 1:
 		return context.Admin.T(context.Context, fmt.Sprint(values[0]), fmt.Sprint(values[0]))
 	case 2:
+		if values[0] == "qor_admin.menus.Dashboard" {
+			fmt.Println(values[0])
+		}
+		if values[0] == "qor_admin.menus.Site Management" {
+			fmt.Println(values[0])
+		}
 		return context.Admin.T(context.Context, fmt.Sprint(values[0]), fmt.Sprint(values[1]))
 	case 3:
 		return context.Admin.T(context.Context, fmt.Sprint(values[0]), fmt.Sprint(values[1]), values[2:]...)

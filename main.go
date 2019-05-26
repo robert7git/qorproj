@@ -42,13 +42,16 @@ func main() {
 	cmdLine.Parse(os.Args[1:])
 
 	var (
+		// NOTE: router
 		Router = chi.NewRouter()
-		Admin  = admin.New(&admin.AdminConfig{
+		// NOTE: Admin
+		Admin = admin.New(&admin.AdminConfig{
 			SiteName: "HERRING",
 			Auth:     auth.AdminAuth{},
 			DB:       db.DB.Set(publish2.VisibleMode, publish2.ModeOff).Set(publish2.ScheduleMode, publish2.ModeOff),
 			I18n:     i18n.I18n,
 		})
+		// NOTE: Application
 		Application = application.New(&application.Config{
 			Router: Router,
 			Admin:  Admin,

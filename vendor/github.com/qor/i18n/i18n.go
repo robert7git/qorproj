@@ -124,11 +124,17 @@ func (i18n *I18n) DeleteTranslation(translation *Translation) (err error) {
 
 // Scope i18n scope
 func (i18n *I18n) Scope(scope string) admin.I18n {
+	// if value == "Site Management" {
+	// 	fmt.Println(scope)
+	// }
 	return &I18n{cacheStore: i18n.cacheStore, scope: scope, value: i18n.value, Backends: i18n.Backends, Resource: i18n.Resource, FallbackLocales: i18n.FallbackLocales, fallbackLocales: i18n.fallbackLocales}
 }
 
 // Default default value of translation if key is missing
 func (i18n *I18n) Default(value string) admin.I18n {
+	if value == "Site Management" {
+		fmt.Println(value)
+	}
 	return &I18n{cacheStore: i18n.cacheStore, scope: i18n.scope, value: value, Backends: i18n.Backends, Resource: i18n.Resource, FallbackLocales: i18n.FallbackLocales, fallbackLocales: i18n.fallbackLocales}
 }
 

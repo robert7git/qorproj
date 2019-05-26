@@ -1,8 +1,14 @@
 # L10n
 
-L10n gives your [GORM](https://github.com/jinzhu/gorm) models the ability to localize for different Locales. It can be a catalyst for the adaptation of a product, application, or document content to meet the language, cultural, and other requirements of a specific target market.
+L10n gives your [GORM](https://github.com/jinzhu/gorm) models the ability to localize for different Locales. 
+It can be a catalyst for the adaptation of a product, application, or document content to meet the language, 
+cultural, and other requirements of a specific target market.
 
 [![GoDoc](https://godoc.org/github.com/qor/l10n?status.svg)](https://godoc.org/github.com/qor/l10n)
+
+翻译  
+L10n 针对你的不同的 locals 给你的 gorm models 本地化的能力.  
+对于一个 使用特定语言,文化,或者其他 要求特定目标市场的 product, application, or document content 他可以是 一个 催化剂.  
 
 ## Usage
 

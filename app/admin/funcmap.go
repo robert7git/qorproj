@@ -6,9 +6,11 @@ import (
 	"github.com/qor/admin"
 )
 
+// IMPORTANT: admin.funcMap 这里 应用层注入 admin.funcMap
 func initFuncMap(Admin *admin.Admin) {
 	Admin.RegisterFuncMap("render_latest_order", renderLatestOrder)
 	Admin.RegisterFuncMap("render_latest_products", renderLatestProduct)
+	// Admin.RegisterFuncMap("render_side_menu", renderSideMenu)
 }
 
 func renderLatestOrder(context *admin.Context) template.HTML {
@@ -32,3 +34,7 @@ func renderLatestProduct(context *admin.Context) template.HTML {
 	}
 	return template.HTML("")
 }
+
+// func renderSideMenu(context *admin.Context) template.HTML {
+// return template.HTML("")
+// }

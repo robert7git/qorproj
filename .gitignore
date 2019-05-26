@@ -54,7 +54,7 @@ config/*.yml
 public/microsites/*
 # vendor/*
 .DS_Store
-
+.idea
 *_env
 
 frontend/.next/

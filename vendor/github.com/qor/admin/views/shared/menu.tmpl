@@ -2,7 +2,9 @@
   {{range $_, $value := .Result}}
     {{if $value.SubMenus}}
       <li qor-icon-name="{{get_icon $value}}" {{if $value.Active}}class="active"{{end}}>
-        <a href="{{if $value.URL}}{{$value.URL}}{{else}}javascript:void(0);{{end}}">{{t (printf "qor_admin.menus.%v" $value.Name) $value.Name}}</a>
+        <a href="{{if $value.URL}}{{$value.URL}}{{else}}javascript:void(0);{{end}}">
+          {{t (printf "qor_admin.menus.%v" $value.Name) $value.Name}}
+        </a>
         {{render "shared/menu" $value.SubMenus}}
       </li>
     {{else}}

@@ -7,6 +7,7 @@ import (
 	"github.com/qor/roles"
 )
 
+// NOTE: admin.menu 获取左侧菜单
 // GetMenus get all sidebar menus for admin
 func (admin Admin) GetMenus() []*Menu {
 	return admin.menus
@@ -93,6 +94,7 @@ func (menu *Menu) GetSubMenus() []*Menu {
 	return menu.subMenus
 }
 
+// NOTE: 在这里读取国际化 处理 如何?
 func getMenu(menus []*Menu, names ...string) *Menu {
 	if len(names) > 0 {
 		name := names[0]

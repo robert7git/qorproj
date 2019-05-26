@@ -7,6 +7,10 @@ import (
 	"github.com/qor/action_bar"
 	"github.com/qor/i18n/inline_edit"
 	"github.com/qor/qor"
+	"github.com/qor/render"
+	"github.com/qor/session"
+	"github.com/qor/session/manager"
+	"github.com/qor/widget"
 	"qorproj/app/admin"
 	"qorproj/config"
 	"qorproj/config/i18n"
@@ -14,10 +18,6 @@ import (
 	"qorproj/models/seo"
 	"qorproj/models/users"
 	"qorproj/utils"
-	"github.com/qor/render"
-	"github.com/qor/session"
-	"github.com/qor/session/manager"
-	"github.com/qor/widget"
 )
 
 // GetEditMode get edit mode
@@ -34,6 +34,7 @@ func AddFuncMapMaker(view *render.Render) *render.Render {
 			funcMap = oldFuncMapMaker(render, req, w)
 		}
 
+		// NOTE: template 中 t 方法
 		// Add `t` method
 		for key, fc := range inline_edit.FuncMap(i18n.I18n, utils.GetCurrentLocale(req), GetEditMode(w, req)) {
 			funcMap[key] = fc

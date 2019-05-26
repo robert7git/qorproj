@@ -193,6 +193,7 @@ func (admin *Admin) NewResource(value interface{}, config ...*Config) *Resource 
 	return res
 }
 
+// NOTE: admin.AddResource
 // AddResource make a model manageable from admin interface
 func (admin *Admin) AddResource(value interface{}, config ...*Config) *Resource {
 	res := admin.newResource(value, config...)
@@ -253,6 +254,7 @@ func (admin *Admin) AddSearchResource(resources ...*Resource) {
 	admin.searchResources = append(admin.searchResources, resources...)
 }
 
+// IMPORTANT: 国际化 admin.T() 注入国际化 取值
 // T call i18n backend to translate
 func (admin *Admin) T(context *qor.Context, key string, value string, values ...interface{}) template.HTML {
 	locale := utils.GetLocale(context)

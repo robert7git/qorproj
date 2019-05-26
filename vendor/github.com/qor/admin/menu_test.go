@@ -67,7 +67,7 @@ func TestMenuPriority(t *testing.T) {
 	admin := New(&qor.Config{})
 	admin.router.Prefix = "/admin"
 
-	admin.AddMenu(&Menu{Name: "Name1", Priority: 2})
+	admin.AddMenu(&Menu{Name: "Abc Defghy", Priority: 2})
 	admin.AddMenu(&Menu{Name: "Name2", Priority: -1})
 	admin.AddMenu(&Menu{Name: "Name3", Priority: 3})
 	admin.AddMenu(&Menu{Name: "Name4", Priority: 4})

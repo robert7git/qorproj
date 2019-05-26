@@ -48,6 +48,9 @@
     </div>
 
     <!-- JavaScripts -->
+    <!--
+      //NOTE: 国际化也可以前端调用
+    -->
     <script>
       QOR_Translations = window.QOR_Translations || {};
       QOR_Translations.okButton = '{{t "qor_admin.form.ok" "OK"}}'
@@ -59,7 +62,7 @@
     {{load_admin_javascripts}}
     {{load_theme_javascripts}}
 
-    {{/* 
+    {{/*
       菜单折叠
       NOTE: 由于 作者 不够开放. 不让改 js 只好写在 view 里了.
     */}}
@@ -89,6 +92,9 @@
       body.sidebarExpendedOff .mdl-layout__content{
         padding-left:10px
       }
+      body.sidebarExpendedOff .qor-page__header{
+        width:100%;
+      }
     </style>
     <script>
       var sidebarCtrlBtn = $('<i class="sidebarCtrlBtn">')
@@ -99,5 +105,14 @@
       });
     </script>
     <!-- 折叠菜单 end -->
+
+    <!-- 菜单国际化 start
+    <script>
+      //debugger
+      //QOR_Translations.dashbord = '{{t "qor_admin.menu.dashbord" "dashbord"}}'
+
+      //console.log(QOR_Translations)
+    </script>-->
+    <!-- 菜单国际化 end -->
   </body>
 </html>
