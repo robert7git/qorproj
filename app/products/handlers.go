@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/qor/render"
 	"qorproj/models/products"
 	"qorproj/utils"
-	"github.com/qor/render"
 )
 
 // Controller products controller
@@ -33,8 +33,15 @@ func (ctrl Controller) Gender(w http.ResponseWriter, req *http.Request) {
 		tx       = utils.GetDB(req)
 	)
 
+	/* ------------------------------------------------------
+		  //NOTE: 修复导航数据空的问题
+		  原因是因为数据库里Products表gender字段存的是Men、Kids、Women, 导致查询出来的是空数组 修复方法:
+	    将utils.URLParam("gender", req) 获取出来的首字母大写
+	    app/products/handlers.go
+		  ------------------------------------------------------ */
+	//
 	tx.Where(&products.Product{Gender: utils.URLParam("gender", req)}).Preload("Category").Find(&Products)
-
+	// tx.Where(&products.Product{Gender: strings.Title(utils.URLParam("gender", req))}).Preload("Category").Find(&Products)
 	ctrl.View.Execute("gender", map[string]interface{}{"Products": Products}, req, w)
 }
 
@@ -58,7 +65,6 @@ func (ctrl Controller) Show(w http.ResponseWriter, req *http.Request) {
 	}
 
 	tx.Preload("Product").Preload("Color").Preload("SizeVariations.Size").Where(&products.ColorVariation{ProductID: product.ID, ColorCode: colorCode}).First(&colorVariation)
-
 	ctrl.View.Execute("show", map[string]interface{}{"CurrentColorVariation": colorVariation}, req, w)
 }
 

@@ -25,8 +25,8 @@ var DefaultAuthorizeHandler = func(context *auth.Context) (*claims.Claims, error
 	req.ParseForm()
 	authInfo.Provider = provider.GetName()
 	authInfo.UID = strings.TrimSpace(req.Form.Get("login"))
-
-	authwhere := auth_identity.AuthIdentity{Basic: authInfo} // IMPORTANT: 这里修复错误
+	// IMPORTANT: 登录错误 这里修复错误 // Unknown column 'basics.provider' in 'where clause
+	authwhere := auth_identity.AuthIdentity{Basic: authInfo}
 	if tx.Model(context.Auth.AuthIdentityModel).Where(authwhere).Scan(&authInfo).RecordNotFound() {
 		return nil, auth.ErrInvalidAccount
 	}

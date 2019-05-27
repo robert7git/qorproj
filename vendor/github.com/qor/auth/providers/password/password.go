@@ -136,7 +136,8 @@ func (provider Provider) ServeHTTP(context *auth.Context) {
 
 					authInfo.Provider = provider.GetName()
 					authInfo.UID = strings.TrimSpace(req.Form.Get("email"))
-					authwhere := auth_identity.AuthIdentity{Basic: authInfo} // IMPORTANT: 这里修复错误
+					// IMPORTANT: 登录错误 这里修复错误 // Unknown column 'basics.provider' in 'where clause
+					authwhere := auth_identity.AuthIdentity{Basic: authInfo}
 					if tx.Model(context.Auth.AuthIdentityModel).Where(authwhere).Scan(&authInfo).RecordNotFound() {
 						err = auth.ErrInvalidAccount
 					}

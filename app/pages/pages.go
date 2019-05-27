@@ -6,15 +6,15 @@ import (
 	"github.com/qor/admin"
 	"github.com/qor/page_builder"
 	"github.com/qor/qor"
+	"github.com/qor/qor/resource"
+	"github.com/qor/qor/utils"
+	"github.com/qor/render"
+	"github.com/qor/widget"
 	adminapp "qorproj/app/admin"
 	"qorproj/config/application"
 	"qorproj/config/db"
 	"qorproj/models/blogs"
 	"qorproj/utils/funcmapmaker"
-	"github.com/qor/qor/resource"
-	"github.com/qor/qor/utils"
-	"github.com/qor/render"
-	"github.com/qor/widget"
 )
 
 // New new home app

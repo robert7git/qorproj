@@ -203,6 +203,8 @@
   box-sizing: border-box;
   background-color: #fff;
   z-index: 5000;
+  border:1px solid #333;
+
   @include shadow-2dp-bottom();
   @include clearfix();
   .mdl-button {

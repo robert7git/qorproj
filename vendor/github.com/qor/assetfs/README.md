@@ -1,10 +1,11 @@
 # AssetFS
 
-AssetFS is a golang package and defined AssetFS Interface that abstracts the access to files.
+AssetFS is a golang package and defined AssetFS 
+Interface that abstracts the access to files.
 
 It has a default implementation that based on FileSystem, which could be used in development, load required files directly from disk.
 
-If you want to compile all required files into a binary and load files from from binary, you could refer our [bindatafs](http://github.com/qor/bindatafs)
+If you want to compile all required files into a `binary` and load files from from binary, you could refer our [bindatafs](http://github.com/qor/bindatafs)
 
 # Usage
 

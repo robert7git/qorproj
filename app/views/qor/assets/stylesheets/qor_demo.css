@@ -1,48 +1,69 @@
+
+[qor-icon-name*='Auth'] > a::before {
+	content: '\e051';
+	/* content: '\f2c2'; */
+}
+
+[qor-icon-name*='Pages'] > a::before {
+	content: '\f15b';
+	/* content: '\f0c5'; */
+}
+
 /* Dashboard Introduction */
 .introduction {
-  width: auto;
-  margin-bottom: 0;
-  font-size: 1.1em;
+	width: auto;
+	margin-bottom: 0;
+	font-size: 1.1em;
+	border: 1px solid #333;
 }
 
 .introduction h5 {
-  width: auto;
+	width: auto;
 }
 
 .introduction a {
-  padding: 0.2em 0.5em;
-  display: inline-block;
+	padding: 0.2em 0.5em;
+	display: inline-block;
 }
 
 /* Dashboard Reports */
 .reports .reports-daterange .mdl-cell {
-  width: auto;
+	width: auto;
 }
 
-.reports [data-toggle="qor.datepicker"] {
-  width: 9em;
-  text-align: center;
+.reports [data-toggle='qor.datepicker'] {
+	width: 9em;
+	text-align: center;
 }
 
 .reports .datepicker-separator {
-  width: 1em;
-  text-align: center;
+	width: 1em;
+	text-align: center;
 }
 
-.reports .yesterday-reports, .reports .last-week-reports, .reports .this-week-reports {
-  font-weight: normal;
-  color: #666;
+.reports .yesterday-reports,
+.reports .last-week-reports,
+.reports .this-week-reports {
+	font-weight: normal;
+	color: #666;
 }
-
 
 /* select many */
 
-.qor-field__selectmany .qor-microsite__containers>li .qor-microsite__containers-image span {
-  width: calc(100% - 54px) !important;
+.qor-field__selectmany
+	.qor-microsite__containers
+	> li
+	.qor-microsite__containers-image
+	span {
+	width: calc(100% - 54px) !important;
 }
 
-.qor-field__selectmany .qor-microsite__containers>li .qor-microsite__containers-image img {
-    max-width: 42px;
-    max-height: 30px;
-    margin-right: 8px;
+.qor-field__selectmany
+	.qor-microsite__containers
+	> li
+	.qor-microsite__containers-image
+	img {
+	max-width: 42px;
+	max-height: 30px;
+	margin-right: 8px;
 }

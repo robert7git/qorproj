@@ -6,15 +6,15 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/qor/admin"
 	"github.com/qor/qor"
-	"qorproj/config/application"
-	"qorproj/config/auth"
-	"qorproj/models/users"
-	"qorproj/utils/funcmapmaker"
 	"github.com/qor/qor/resource"
 	qorutils "github.com/qor/qor/utils"
 	"github.com/qor/render"
 	"github.com/qor/validations"
 	"golang.org/x/crypto/bcrypt"
+	"qorproj/config/application"
+	"qorproj/config/auth"
+	"qorproj/models/users"
+	"qorproj/utils/funcmapmaker"
 )
 
 // New new home app

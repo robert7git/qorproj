@@ -10,7 +10,7 @@ en-US:
       help: 'HELP'
       sign_in: 'SIGN IN'
       cart: 'CART'
-      logout: "Logout"
+      logout: "LOGOUT"
       my_account: "MY ACCOUNT"
     footer_link:
       faq: 'FAQs'

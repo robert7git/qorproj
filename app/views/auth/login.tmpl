@@ -19,8 +19,6 @@
 
     {{if .Auth.GetProvider "password"}}
       <form action="{{.AuthURL "password/login"}}" method="POST">
-        <b>Demo Account: dev@getqor.com / testing</b>
-
         <ul class="auth-form">
           <li>
             <label for="email">{{t "auth.form.email"}}</label>
@@ -36,6 +34,7 @@
           <li>
             <button type="submit" class="button button__primary">{{t "auth.form.sign_in"}}</button>
           </li>
+          <!-- <b>Demo Account: dev@getqor.com / testing</b> -->
         </ul>
       </form>
     {{end}}

@@ -24,6 +24,7 @@ import (
 	"qorproj/app/pages"
 	"qorproj/app/products"
 	"qorproj/app/static"
+	"qorproj/app/stores"
 	"qorproj/config"
 	"qorproj/config/application"
 	"qorproj/config/auth"
@@ -46,7 +47,7 @@ func main() {
 		Router = chi.NewRouter()
 		// NOTE: Admin
 		Admin = admin.New(&admin.AdminConfig{
-			SiteName: "HERRING",
+			SiteName: "Qor Demo",
 			Auth:     auth.AdminAuth{},
 			DB:       db.DB.Set(publish2.VisibleMode, publish2.ModeOff).Set(publish2.ScheduleMode, publish2.ModeOff),
 			I18n:     i18n.I18n,
@@ -96,6 +97,7 @@ func main() {
 	Application.Use(orders.New(&orders.Config{}))
 	Application.Use(pages.New(&pages.Config{}))
 	Application.Use(enterprise.New(&enterprise.Config{}))
+	Application.Use(stores.New(&stores.Config{}))
 	Application.Use(static.New(&static.Config{
 		Prefixs: []string{"/system"},
 		// NOTE: 这里居然是错的

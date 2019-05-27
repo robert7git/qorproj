@@ -49,6 +49,7 @@ func New(cfg *Config) *Application {
 	}
 }
 
+// NOTE: 这个是把 app 中的 各个模块注入到 application 主程序
 // Use mount router into micro app
 func (application *Application) Use(app MicroAppInterface) {
 	app.ConfigureApplication(application)

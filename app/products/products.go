@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	"github.com/qor/admin"
-	"github.com/qor/i18n"
-	confi18n "qorproj/config/i18n"
+	// "github.com/qor/i18n"
+	// confi18n "qorproj/config/i18n"
 
 	"github.com/qor/media"
 	"github.com/qor/media/media_library"
@@ -50,25 +50,25 @@ func (app App) ConfigureApplication(application *application.Application) {
 // ConfigureAdmin configure admin interface
 func (App) ConfigureAdmin(Admin *admin.Admin) {
 
+	menuName := "Products Management"
 	// adminI18n := Admin.I18n
-	trans := confi18n.I18n
-
-	trans.AddTranslation(&i18n.Translation{Key: "qor_admin.menus.Products Management", Locale: "en-US", Value: "products management"})
-	trans.AddTranslation(&i18n.Translation{Key: "qor_admin.menus.Products Management", Locale: "zh-CN", Value: "商品管理"})
+	// trans := confi18n.I18n
+	// trans.AddTranslation(&i18n.Translation{Key: "qor_admin.menus.Products Management", Locale: "en-US", Value: "products management"})
+	// trans.AddTranslation(&i18n.Translation{Key: "qor_admin.menus.Products Management", Locale: "zh-CN", Value: "商品管理"})
 
 	// Produc Management
-	Admin.AddMenu(&admin.Menu{Name: "Products Management", Priority: 1})
-	color := Admin.AddResource(&products.Color{}, &admin.Config{Menu: []string{"Products Management"}, Priority: -5})
-	Admin.AddResource(&products.Size{}, &admin.Config{Menu: []string{"Products Management"}, Priority: -4})
-	Admin.AddResource(&products.Material{}, &admin.Config{Menu: []string{"Products Management"}, Priority: -4})
+	Admin.AddMenu(&admin.Menu{Name: menuName, Priority: 1})
+	color := Admin.AddResource(&products.Color{}, &admin.Config{Menu: []string{menuName}, Priority: -5})
+	Admin.AddResource(&products.Size{}, &admin.Config{Menu: []string{menuName}, Priority: -4})
+	Admin.AddResource(&products.Material{}, &admin.Config{Menu: []string{menuName}, Priority: -4})
 
-	category := Admin.AddResource(&products.Category{}, &admin.Config{Menu: []string{"Products Management"}, Priority: -3})
+	category := Admin.AddResource(&products.Category{}, &admin.Config{Menu: []string{menuName}, Priority: -3})
 	category.Meta(&admin.Meta{Name: "Categories", Type: "select_many"})
 
-	collection := Admin.AddResource(&products.Collection{}, &admin.Config{Menu: []string{"Products Management"}, Priority: -2})
+	collection := Admin.AddResource(&products.Collection{}, &admin.Config{Menu: []string{menuName}, Priority: -2})
 
 	// Add ProductImage as Media Libraray
-	ProductImagesResource := Admin.AddResource(&products.ProductImage{}, &admin.Config{Menu: []string{"Products Management"}, Priority: -1})
+	ProductImagesResource := Admin.AddResource(&products.ProductImage{}, &admin.Config{Menu: []string{menuName}, Priority: -1})
 
 	ProductImagesResource.Filter(&admin.Filter{
 		Name:       "SelectedType",
@@ -87,7 +87,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 	ProductImagesResource.IndexAttrs("File", "Title")
 
 	// Add Product
-	product := Admin.AddResource(&products.Product{}, &admin.Config{Menu: []string{"Products Management"}})
+	product := Admin.AddResource(&products.Product{}, &admin.Config{Menu: []string{menuName}})
 	product.Meta(&admin.Meta{Name: "Gender", Config: &admin.SelectOneConfig{Collection: Genders, AllowBlank: true}})
 
 	productPropertiesRes := product.Meta(&admin.Meta{Name: "ProductProperties"}).Resource
@@ -281,6 +281,7 @@ func (App) ConfigureAdmin(Admin *admin.Admin) {
 		Name: "View On Site",
 		URL: func(record interface{}, context *admin.Context) string {
 			if product, ok := record.(*products.Product); ok {
+				// NOTE: 商品链接
 				return fmt.Sprintf("/products/%v", product.Code)
 			}
 			return "#"

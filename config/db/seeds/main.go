@@ -32,6 +32,9 @@ import (
 	"github.com/qor/notification/channels/database"
 	"github.com/qor/publish2"
 	"github.com/qor/qor"
+	"github.com/qor/seo"
+	"github.com/qor/slug"
+	"github.com/qor/sorting"
 	"qorproj/app/admin"
 	"qorproj/config/auth"
 	"qorproj/config/db"
@@ -43,9 +46,6 @@ import (
 	"qorproj/models/settings"
 	"qorproj/models/stores"
 	"qorproj/models/users"
-	"github.com/qor/seo"
-	"github.com/qor/slug"
-	"github.com/qor/sorting"
 )
 
 /* How to run this script

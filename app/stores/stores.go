@@ -5,11 +5,11 @@ import (
 
 	"github.com/qor/admin"
 	"github.com/qor/qor"
-	"qorproj/config/application"
-	"qorproj/models/stores"
 	"github.com/qor/qor/resource"
 	"github.com/qor/qor/utils"
 	"github.com/qor/validations"
+	"qorproj/config/application"
+	"qorproj/models/stores"
 )
 
 // New new home app
@@ -34,7 +34,9 @@ func (app App) ConfigureApplication(application *application.Application) {
 // ConfigureAdmin configure admin interface
 func (App) ConfigureAdmin(Admin *admin.Admin) {
 	// Add Store
+	Admin.AddMenu(&admin.Menu{Name: "Store Management", Priority: -1})
 	store := Admin.AddResource(&stores.Store{}, &admin.Config{Menu: []string{"Store Management"}})
+
 	store.Meta(&admin.Meta{Name: "Owner", Type: "single_edit"})
 	store.AddValidator(&resource.Validator{
 		Handler: func(record interface{}, metaValues *resource.MetaValues, context *qor.Context) error {
