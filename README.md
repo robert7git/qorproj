@@ -93,7 +93,7 @@ $ go run -mod
 
 ## 1.7. 错误修复
 
--   登录 - 错误
+### 登录 - 错误
 
 ```go
 tx.Model(context.Auth.AuthIdentityModel).Where(authInfo).Scan(&authInfo).RecordNotFound()
@@ -106,10 +106,23 @@ tx.Model(context.Auth.AuthIdentityModel).Where(authwhere).Scan(&authInfo).Record
 
 需要在下面代码替换.
 
--   Q/auth/providers/user_storer.go 错误
--   Q/auth/providers/password 错误
-    -   password.go 错误
-    -   handlers.go 错误
+Q/auth/providers/user_storer.go 错误
+Q/auth/providers/password 错误
+.../password.go 错误
+.../handlers.go 错误
+
+### 主导航 -> Men/Women/Kids 下列表链接错误
+model/products 
+```go
+func DefaultPath(){
+  defaultpath := "/"
+  // 这里的 缺少 ColorVariations 这个值链接就会生成失败  
+  if len(product.ColorVariations) > 0 {
+    defaultpath = "xx"
+  }
+  return defaultpath
+}
+```
 
 ## 额外资料
 
