@@ -82,6 +82,10 @@ $ go run -mod
 
 ## 1.6. Q 包
 
+-   Q/qor
+
+    -   Q/qor/gulp.js 提供 admin 前端构建能力
+
 -   Q/admin
 -   Q/auth
 -   Q/page_builder
