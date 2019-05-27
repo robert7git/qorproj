@@ -4,9 +4,9 @@
 
 ## 1.1. TODO
 
--   [ x ] 产品列表链接丢失
--   [   ] 添加 spa 机制
--   [ x ] go mod 相关 / debug 时 go mod 走 vendor 但是, go run main 走 \$GOpath / 原来如此
+-   [o] 添加 spa 机制
+-   [x] 产品列表链接丢失
+-   [x] go mod 相关 / debug 时 go mod 走 vendor 但是, go run main 走 \$GOpath / 原来如此
 
 ## 1.2. 说明
 
