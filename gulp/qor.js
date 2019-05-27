@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
+import sourcemaps from 'gulp-sourcemaps';
 
 var plugins = require('gulp-load-plugins')();
 
@@ -29,9 +30,11 @@ export function qor(params) {
   gulp.task('sass', function() {
     return gulp
       .src(styles.src)
+      .pipe(sourcemaps.init())
       .pipe(plugins.sass())
       .pipe(plugins.csscomb())
-      .pipe(plugins.cleanCss())
+      // .pipe(plugins.cleanCss())
+      .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest(styles.dest));
   });
 

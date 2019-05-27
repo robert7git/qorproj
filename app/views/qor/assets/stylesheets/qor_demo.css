@@ -1,4 +1,6 @@
-
+body{
+  font-weight: normal;
+}
 [qor-icon-name*='Auth'] > a::before {
 	content: '\e051';
 	/* content: '\f2c2'; */

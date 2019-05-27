@@ -1,9 +1,9 @@
 // Variables
 // --------------------------------------------------
 // Material Design Lite's variables
-@import "mdl/variables"; // Customize palette
+@import 'mdl/variables'; // Customize palette
 // Download: https://storage.googleapis.com/code.getmdl.io/1.0.3/material.blue-pink.min.css
-$color-primary: $palette-light-blue-500;
+$color-primary: $palette-light-blue-200;
 $color-primary-dark: $palette-light-blue-700; // Z-index master list
 //
 // Warning: Avoid customizing these values. They're used for a bird's eye view
@@ -12,8 +12,10 @@ $zindex-fixer: 990;
 $zindex-slideout: 1000;
 $zindex-bottomsheets: 1005;
 $zindex-modal: 1010;
-$color-main-header: #0277bd;
-$color-slideout-header: unquote("rgb(#{$color-primary})");
+$color-main-header: #36c;
+$color-slideout-header: unquote('rgb(#{$color-primary})');
 $color-dash: #ededed;
-$color-body-bg: #f5f5f5;
+$color-body-bg: #eee;
 $width-bottomsheet: 640px;
+
+// $HEADER_HEIGHT:64px;

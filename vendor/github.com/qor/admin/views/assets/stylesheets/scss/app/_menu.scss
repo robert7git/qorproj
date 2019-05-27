@@ -6,6 +6,7 @@
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
+  // border:1px solid #333;
 
   > li {
     > a {
@@ -18,7 +19,7 @@
 
       &:hover,
       &:focus {
-        background-color: unquote("rgba(#{$color-black}, 0.12)");
+        background-color: unquote('rgba(#{$color-black}, 0.12)');
         text-decoration: none;
       }
     }
@@ -34,7 +35,7 @@
     > a,
     > a:hover,
     > a:focus {
-      color: unquote("rgb(#{$color-primary})");
+      color: unquote('rgb(#{$color-primary})');
       cursor: default;
     }
   }
@@ -44,7 +45,7 @@
   padding-top: 8px;
   padding-bottom: 8px;
 
-  > ul  {
+  > ul {
     > li > a {
       position: relative;
 
@@ -66,18 +67,18 @@
 
     > .has-menu > a {
       &::after {
-        content: "\e5ce";
+        content: '\e5ce';
       }
     }
 
     > .is-expanded > a {
       &::after {
-        content: "\e5cf";
+        content: '\e5cf';
       }
     }
   }
 }
 
-.mdl-layout.is-upgraded .mdl-layout__tab.is-active::after{
+.mdl-layout.is-upgraded .mdl-layout__tab.is-active::after {
   background-color: #fff;
 }
