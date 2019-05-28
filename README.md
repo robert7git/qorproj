@@ -1,9 +1,10 @@
-<!-- TOC -->autoauto- [1. QOR](#1-qor)auto    - [1.1. TODO](#11-todo)auto    - [1.2. 说明](#12-说明)auto    - [1.3. 启动](#13-启动)auto    - [1.4. 结构](#14-结构)auto    - [1.5. 概念](#15-概念)auto    - [1.6. Q 包](#16-q-包)auto    - [1.7. 错误修复](#17-错误修复)auto        - [登录 - 错误](#登录---错误)auto        - [主导航 -> Men/Women/Kids 下列表链接错误](#主导航---menwomenkids-下列表链接错误)auto    - [额外资料](#额外资料)autoauto<!-- /TOC -->
-
 # 1. QOR
 
 ## 1.1. TODO
 
+-   [ ] bindatafs
+-   [ ] 微信授权
+-   [ ] 七牛存储
 -   [ ] 添加 spa 机制
 -   [x] 产品列表链接丢失
 -   [x] go mod 相关 / debug 时 go mod 走 vendor 但是, go run main 走 \$GOpath / 原来如此
@@ -114,11 +115,13 @@ Q/auth/providers/password 错误
 .../handlers.go 错误
 
 ### 主导航 -> Men/Women/Kids 下列表链接错误
-model/products 
+
+model/products
+
 ```go
 func DefaultPath(){
   defaultpath := "/"
-  // 这里的 缺少 ColorVariations 这个值链接就会生成失败  
+  // 这里的 缺少 ColorVariations 这个值链接就会生成失败
   if len(product.ColorVariations) > 0 {
     defaultpath = "xx"
   }
@@ -132,3 +135,20 @@ func DefaultPath(){
 [QOR 相关 blog](https://blog.csdn.net/freewebsys/article/details/80575900)  
 [go modules 初探](https://www.cnblogs.com/apocelipes/p/9534885.html)  
 [go modules 使用与细节](https://www.cnblogs.com/apocelipes/p/10295096.html)
+[vscode go test 配置](https://blog.csdn.net/yangxuan0261/article/details/81810416)
+[go build/install/get](https://segmentfault.com/q/1010000004044176)
+
+<!-- // go mod edit -require github.com/containous/traefik@master -->
+
+## 包解决知道
+
+当有第三方包需要修改时，作者不接受 pr 。
+如果作者修复了问题可以简单删除 replace 就可以了。
+当修改包路径时
+
+
+## replace 解决 依赖包修改问题
+
+当有第三方包需要修改时，作者不接受 pr 。
+如果作者修复了问题可以简单删除 replace 就可以了。
+当修改包路径时

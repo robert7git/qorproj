@@ -6,15 +6,17 @@ require (
 	github.com/PuerkitoBio/goquery v1.5.0 // indirect
 	github.com/Shaked/gomobiledetect v0.0.0-20171211181707-25f014f66568 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a // indirect
-	github.com/aws/aws-sdk-go v1.19.34 // indirect
+	github.com/aws/aws-sdk-go v1.19.38 // indirect
 	github.com/azumads/faker v0.0.0-20150921074035-6cae71ddb107
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
+	//github.com/aws/aws-sdk-go v1.19.34 // indirect
+	//github.com/azumads/faker v0.0.0-20150921074035-6cae71ddb107
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/disintegration/imaging v1.6.0 // indirect
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/fatih/color v1.7.0
 	github.com/gin-gonic/gin v1.4.0 // indirect
 	github.com/go-chi/chi v4.0.2+incompatible
-	github.com/google/go-github v17.0.0+incompatible // indirect
+	github.com/google/go-github v17.0.0+incompatible
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/gorilla/schema v1.1.0
 	github.com/gorilla/sessions v1.1.3 // indirect
@@ -22,15 +24,19 @@ require (
 	github.com/headzoo/surf v1.0.0 // indirect
 	github.com/headzoo/ut v0.0.0-20181013193318-a13b5a7a02ca // indirect
 	github.com/jinzhu/configor v1.0.0
-	github.com/jinzhu/copier v0.0.0-20180308034124-7e38e58719c3 // indirect
+	github.com/jinzhu/copier v0.0.0-20180308034124-7e38e58719c3
 	github.com/jinzhu/gorm v1.9.8
+	github.com/jinzhu/inflection v0.0.0-20180308033659-04140366298a
 	github.com/jinzhu/now v1.0.0
+	github.com/joho/godotenv v1.3.0
 	github.com/jteeuwen/go-bindata v3.0.7+incompatible
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/manveru/gobdd v0.0.0-20131210092515-f1a17fdd710b // indirect
 	github.com/mattn/go-colorable v0.1.1 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2
-	github.com/mrjones/oauth v0.0.0-20180629183705-f4e24b6d100c // indirect
+	github.com/mrjones/oauth v0.0.0-20180629183705-f4e24b6d100c
+	github.com/qiniu/api.v7 v7.2.5+incompatible // indirect
+	github.com/qiniu/x v7.0.8+incompatible // indirect
 	github.com/qor/action_bar v0.0.0-20190314070413-136e5e2c5b8c
 	github.com/qor/activity v0.0.0-20190515035752-9e0f0a3a3da9
 	github.com/qor/admin v0.0.0-20190329022438-b2f472167d02
@@ -72,10 +78,23 @@ require (
 	github.com/qor/worker v0.0.0-20190409083615-5c9381791cdc
 	github.com/rainycape/unidecode v0.0.0-20150907023854-cb7f23ec59be // indirect
 	github.com/tealeg/xlsx v1.0.3 // indirect
-	github.com/theplant/cldr v0.0.0-20190423050709-9f76f7ce4ee8 // indirect
-	github.com/theplant/htmltestingutils v0.0.0-20190423050759-0e06de7b6967 // indirect
-	github.com/theplant/testingutils v0.0.0-20181126090146-80e83e84b643 // indirect
+	github.com/theplant/cldr v0.0.0-20190423050709-9f76f7ce4ee8
+	github.com/theplant/htmltestingutils v0.0.0-20190423050759-0e06de7b6967
+	github.com/theplant/testingutils v0.0.0-20181126090146-80e83e84b643
 	github.com/unrolled/render v1.0.0
 	github.com/yosssi/gohtml v0.0.0-20190128141317-9b7db94d32d9 // indirect
 	golang.org/x/crypto v0.0.0-20190513172903-22d7a77e9e5f
+	golang.org/x/oauth2 v0.0.0-20190226205417-e64efc72b421
+	qiniupkg.com/x v7.0.8+incompatible // indirect
 )
+
+//replace (
+//github.com/qor/admin v0.0.0-20190329022438-b2f472167d02 => qorproj/qor/lib/qor/admin v0.0.0-20190329022438-b2f472167d02
+//github.com/qor/auth v0.0.0-20190329022438-b2f472167d02 => qorproj/qor/lib/qor/auth v0.0.0-20190103025640-46aae9fa92fa
+//)
+
+replace github.com/qor/admin => ./lib/qor/admin
+
+replace github.com/qor/auth => ./lib/qor/auth
+
+replace github.com/qor/il8n => ./lib/qor/il8n

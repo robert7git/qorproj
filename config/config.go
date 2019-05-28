@@ -4,6 +4,7 @@ import (
 	"os"
 
 	"github.com/jinzhu/configor"
+	_ "github.com/joho/godotenv/autoload"
 	amazonpay "github.com/qor/amazon-pay-sdk-go"
 	"github.com/qor/auth/providers/facebook"
 	"github.com/qor/auth/providers/github"
@@ -14,6 +15,7 @@ import (
 	"github.com/qor/mailer"
 	"github.com/qor/mailer/logger"
 	"github.com/qor/media/oss"
+	"github.com/qor/oss/qiniu"
 	"github.com/qor/oss/s3"
 	"github.com/qor/redirect_back"
 	"github.com/qor/session/manager"
@@ -30,7 +32,8 @@ type SMTPConfig struct {
 var Config = struct {
 	HTTPS bool `default:"false" env:"HTTPS"`
 	Port  uint `default:"7000" env:"PORT"`
-	DB    struct {
+	//NOTE: DB
+	DB struct {
 		Name     string `env:"DBName" default:"qor_example"`
 		Adapter  string `env:"DBAdapter" default:"mysql"`
 		Host     string `env:"DBHost" default:"localhost"`
@@ -44,6 +47,15 @@ var Config = struct {
 		Region          string `env:"AWS_Region"`
 		S3Bucket        string `env:"AWS_Bucket"`
 	}
+	// NOTE: 七牛
+	Qiniu struct {
+		AccessID  string `env:"QOR_QINIU_ACCESS_ID"`
+		AccessKey string `env:"QOR_QINIU_ACCESS_KEY"`
+		Bucket    string `env:"QOR_QINIU_BUCKET"`
+		Region    string `env:"QOR_QINIU_REGION"`
+		Endpoint  string `env:"QOR_QINIU_ENDPOINT"`
+	}
+	// NOTE: 支付
 	AmazonPay struct {
 		MerchantID   string `env:"AmazonPayMerchantID"`
 		AccessKey    string `env:"AmazonPayAccessKey"`
@@ -53,11 +65,14 @@ var Config = struct {
 		Sandbox      bool   `env:"AmazonPaySandbox"`
 		CurrencyCode string `env:"AmazonPayCurrencyCode" default:"JPY"`
 	}
-	SMTP         SMTPConfig
-	Github       github.Config
-	Google       google.Config
-	Facebook     facebook.Config
-	Twitter      twitter.Config
+	//NOTE: 邮件
+	SMTP SMTPConfig
+	//NOTE: 授权
+	Github   github.Config
+	Google   google.Config
+	Facebook facebook.Config
+	Twitter  twitter.Config
+	//NOTE: 3 party api
 	GoogleAPIKey string `env:"GoogleAPIKey"`
 	BaiduAPIKey  string `env:"BaiduAPIKey"`
 }{}
@@ -92,6 +107,16 @@ func init() {
 			AccessKey: Config.S3.SecretAccessKey,
 			Region:    Config.S3.Region,
 			Bucket:    Config.S3.S3Bucket,
+		})
+	}
+
+	if Config.Qiniu.AccessID != "" {
+		oss.Storage = qiniu.New(&qiniu.Config{
+			AccessID:  Config.Qiniu.AccessID,
+			AccessKey: Config.Qiniu.AccessKey,
+			Bucket:    Config.Qiniu.Bucket,
+			Region:    Config.Qiniu.Region,
+			Endpoint:  Config.Qiniu.Endpoint,
 		})
 	}
 

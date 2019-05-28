@@ -52,7 +52,7 @@ npm-debug.log
 debug
 config/*.yml
 public/microsites/*
-# vendor/*
+vendor/*
 .DS_Store
 .idea
 *_env
